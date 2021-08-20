@@ -5,4 +5,7 @@ services:
     ports:
     - '9092:9092'
     - '2181:2181'
+    environment:
+      ADVERTISED_HOST: kafka
+#      ADVERTISED_LISTENERS: 192.168.1.101
 

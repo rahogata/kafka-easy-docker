@@ -71,5 +71,10 @@ if [ ! -z "$AUTO_CREATE_TOPICS" ]; then
     echo "auto.create.topics.enable=$AUTO_CREATE_TOPICS" >> $KAFKA_HOME/config/server.properties
 fi
 
+# Set the advertised listeners
+if [ ! -z "$ADVERTISED_LISTENERS" ]; then
+    echo "advertised.listeners: $ADVERTISED_LISTENERS"
+    echo "advertised.listeners=$ADVERTISED_LISTENERS" >> $KAFKA_HOME/config/server.properties
+fi
 # Run Kafka
 $KAFKA_HOME/bin/kafka-server-start.sh $KAFKA_HOME/config/server.properties
